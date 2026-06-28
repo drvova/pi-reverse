@@ -1,6 +1,14 @@
-# pi-reverse
+<p align="center">
+  <img src="https://github.com/drvova/pi-mcp-deferred/raw/master/pi-logo-animated.svg" alt="pi" width="120" />
+</p>
 
-Static binary reverse-engineering MCP server for the [pi agent](https://github.com/earendil-works/pi).
+<h1 align="center">pi-reverse</h1>
+
+<p align="center">Static binary reverse-engineering MCP server for the <a href="https://github.com/earendil-works/pi">pi agent</a>.</p>
+
+---
+
+Direct TypeScript port of `ixlinx-agent-core/src/reverse.rs` (2345 lines of Rust).
 
 Direct TypeScript port of `ixlinx-agent-core/src/reverse.rs` (2345 lines of Rust).
 Zero npm dependencies — uses only Node/Bun builtins.
