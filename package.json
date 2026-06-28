@@ -1,0 +1,36 @@
+{
+  "name": "pi-reverse",
+  "version": "1.0.0",
+  "description": "Static binary reverse-engineering MCP server for pi agent. Analyzes PE/ELF/Mach-O/Java class/JAR/JAD files: sections, imports, strings, entropy, disassembly, pseudocode, algorithm/IOC/capability detection, source reconstruction.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "bin": {
+    "pi-reverse": "./src/index.ts"
+  },
+  "scripts": {
+    "start": "bun src/index.ts",
+    "test": "bun test"
+  },
+  "engines": {
+    "bun": ">=1.3.0"
+  },
+  "keywords": [
+    "reverse-engineering",
+    "binary-analysis",
+    "elf",
+    "pe",
+    "java",
+    "j2me",
+    "malware",
+    "mcp",
+    "pi",
+    "pi-package"
+  ],
+  "pi": {
+    "mcp": {
+      "command": "bun",
+      "args": ["./src/index.ts"]
+    }
+  },
+  "license": "MIT"
+}
