@@ -8,25 +8,25 @@
 
 ---
 
-## What it does
+## Capabilities
 
-Analyzes binary files and returns:
-
-- **Format detection**: ELF (32/64-bit), PE (32/64-bit), Mach-O (detected), Java .class, JAR/J2ME archives, JAD descriptors, raw/unknown
-- **Section table parsing**: names, virtual addresses, file offsets, sizes, flags (W/A/X), per-section entropy
-- **Import extraction**: ELF shared library references, PE import address table (DLL + function names), Java class references
-- **String extraction**: ASCII (4+ chars) and UTF-16LE
-- **Entropy analysis**: sliding window entropy with packed/encrypted detection (> 7.4)
-- **Disassembly**: x86/x86_64 pseudo-disassembler (common opcodes), JVM bytecode disassembler (200+ opcodes)
-- **Pseudocode generation**: C-like pseudocode from disassembly, Java method pseudocode from bytecode
-- **Algorithm fingerprinting**: AES, RSA, SHA, CRC, compression, networking, filesystem, J2ME UI, GPU/register work
-- **Malware lab indicators**: IOC extraction (URLs, IPs, domains, registry paths, file paths), capability detection (persistence, process injection, C2, credential access, anti-analysis, crypto/ransomware, reflection, J2ME capabilities, driver/firmware), YARA seed strings
-- **Source reconstruction**: Java .java files from bytecode, C files from native analysis
-- **NanoPython scripting**: summary(), sections(), imports(), algorithms(), iocs(), capabilities(), find_strings('needle'), grep('needle')
+| Capability | Details |
+|---|---|
+| Formats | ELF 32/64, PE 32/64, Mach-O, Java .class, JAR/J2ME, JAD, raw/unknown |
+| Section parsing | Names, virtual addresses, file offsets, sizes, flags (W/A/X), per-section entropy |
+| Import extraction | ELF shared library refs, PE import address table (DLL + functions), Java class refs |
+| String extraction | ASCII (4+ chars) and UTF-16LE |
+| Entropy | Sliding window with packed/encrypted detection (> 7.4) |
+| Disassembly | x86 pseudo-disassembler + JVM bytecode disassembler (200+ opcodes) |
+| Pseudocode | C-like from native disassembly, Java-like from bytecode |
+| Source reconstruction | .java from bytecode, .c from native analysis |
+| Algorithm fingerprinting | AES, RSA, SHA, CRC, compression, networking, filesystem, J2ME UI, GPU/register |
+| IOC extraction | URLs, IPs, domains, registry paths, file paths |
+| Capability detection | Persistence, process injection, C2, credential access, anti-analysis, crypto/ransomware, reflection, J2ME, driver/firmware |
+| YARA seeds | String candidates for YARA rules |
+| NanoPython | summary(), sections(), imports(), algorithms(), iocs(), capabilities(), find_strings(), grep() |
 
 ## Installation
-
-### As a pi package (recommended)
 
 Add to `~/.pi/agent/settings.json`:
 
@@ -37,8 +37,6 @@ Add to `~/.pi/agent/settings.json`:
   ]
 }
 ```
-
-Pi will clone this repo into `~/.pi/agent/git/github.com/drvova/pi-reverse/` automatically.
 
 Then add to `~/.pi/agent/mcp.json`:
 
@@ -67,8 +65,6 @@ bun src/index.ts --cli /bin/ls --mode overview
 
 ### MCP tool: `reverse_analyze`
 
-The agent calls `reverse_analyze` with these arguments:
-
 | Parameter | Type | Default | Description |
 |---|---|---|---|
 | `path` | string | (required) | Path to the binary file to analyze |
@@ -96,8 +92,6 @@ bun src/index.ts --self-test
 ```
 
 ### NanoPython scripting
-
-Pass a `script` string to query the report programmatically:
 
 ```
 summary()                    # format, arch, size, sha256
