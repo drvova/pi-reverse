@@ -8,11 +8,6 @@
 
 ---
 
-Direct TypeScript port of `ixlinx-agent-core/src/reverse.rs` (2345 lines of Rust).
-
-Direct TypeScript port of `ixlinx-agent-core/src/reverse.rs` (2345 lines of Rust).
-Zero npm dependencies — uses only Node/Bun builtins.
-
 ## What it does
 
 Analyzes binary files and returns:
